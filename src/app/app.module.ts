@@ -1,20 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+
 import { LandingComponent } from './landing/landing.component';
 import { RegwizComponent } from './regwiz/regwiz.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SignupComponent } from './signup/signup.component'
+import { AngularMaterialModule } from './angular-material.module';
+
+/* FormsModule */
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+/* Angular Flex Layout */
+
+
 
 const routes: Routes = [
   {
     path: 'landing',
     component: LandingComponent
    // component: ProfileComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: 'profile',
@@ -35,7 +49,8 @@ const config: ExtraOptions = {
   declarations: [
     AppComponent,
     LandingComponent,
-    RegwizComponent
+    RegwizComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +58,11 @@ const config: ExtraOptions = {
     ReactiveFormsModule,
     RouterModule.forRoot(routes, config),
     ProfileModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -7,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
 
   constructor(
     private spinner: NgxSpinnerService
